@@ -1,10 +1,24 @@
 import React, {Component} from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, CameraRoll, ScrollView, Button } from "react-native";
 
 class CamRoll extends Component {
-    static navigationOptions = {
-        title: 'CHAT',
-    };  
+
+    state = {
+        photos: []
+    }
+
+    _handleButtonPress = () => {
+        CameraRoll.getPhotos({
+            first: 20,
+            assetType: 'Photos',
+          })
+          .then(r => {
+            this.setState({ photos: r.edges });
+          })
+          .catch((err) => {
+             //Error Loading Images
+          });
+        };
     render() {
         return (
             <View style={styles.container}>
@@ -13,7 +27,21 @@ class CamRoll extends Component {
                         <Text>Baroo</Text>
                     </View>
                 </View>
-            <Text>camera roll</Text>
+                <Button title="Load Images" onPress={this._handleButtonPress} />
+                <ScrollView>
+                {this.state.photos.map((p, i) => {
+                return (
+                    <Image
+                    key={i}
+                    style={{
+                        width: 300,
+                        height: 100,
+                    }}
+                    source={{ uri: p.node.image.uri }}
+                    />
+                );
+                })}
+                </ScrollView>
             </View>             
         );
     }
