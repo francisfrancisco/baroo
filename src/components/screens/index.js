@@ -5,5 +5,6 @@ import Regis from './regis';
 import NewItem from './newItem';
 import Cam from './cam';
 import Chat from './chat';
+import CamRoll from './cRoll';
 
-export { MainFeed, Login, Cam, NewItem, Regis, Profile, Chat }
+export { MainFeed, Login, Cam, NewItem, Regis, Profile, Chat, CamRoll }

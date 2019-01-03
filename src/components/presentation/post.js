@@ -45,10 +45,8 @@ class Post extends Component{
         }}>
           <Image source={pic} style={{width: this.state.screenWidth, height: 412}} />
         </TouchableOpacity>
-        <View style={styles.iconBar}>
-          {/* <Image source={config.images.heartIcon} style={[styles.icon, {height: 40, width: 40, tintColor: heartIconColor}]}/>
-          <Image source={config.images.bubbleIcon} style={[styles.icon, {height: 35, width: 33}]}/>
-          <Image source={config.images.arrowIcon} style={[styles.icon, {height: 30, width: 30}]}/> */}
+        <View style={styles.infoBar}>
+          <Text>GOLF CLUB DETAILS</Text>
         </View>
       </View>
     )
@@ -81,7 +79,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
-  iconBar: {
+  infoBar: {
     height: config.styleConstants.rowHeight,
     width: 100 + '%',
     borderColor: 'rgb(233,233,233)',

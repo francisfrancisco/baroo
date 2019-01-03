@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { MainFeed, Login, Cam, NewItem, Regis, Profile, Chat, ItemList } from './components/screens';
+import { MainFeed, Login, Cam, NewItem, Regis, Profile, Chat, CamRoll } from './components/screens';
 import { createStackNavigator, createAppContainer, createBottomTabNavigator } from "react-navigation";
 // import config from './config';
 
@@ -24,8 +24,8 @@ const AppContainer = createAppContainer(Tabs);
 class BarooApp extends Component {
   render() {
     return (
-      <AppContainer />
-      // <Profile />
+      // <AppContainer />
+      <CamRoll />
     )
   }
 }
