@@ -8,11 +8,12 @@ class Login extends Component {
     render() {
         return (
             <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-            <Text>Register Form</Text>
+            <Text>Login</Text>
             <TextInput style={styles.inputs} placeholder='email' />
             <TextInput style={styles.inputs} secureTextEntry placeholder='pword'/>
-            <Button title='Login' onPress={() => {this.register}} />
-            <Button title='Signup' onPress={() => {this.register}} />
+                {/* if successful goes to mainFeed */}
+            <Button title='Login' onPress={() => this.props.navigation.navigate('Feed')} />
+            <Button title='Signup' onPress={() => this.props.navigation.navigate('Register')} />
         </View>
         );
     }

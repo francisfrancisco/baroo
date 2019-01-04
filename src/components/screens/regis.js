@@ -22,7 +22,7 @@ class Regis extends Component {
             <TextInput style={styles.inputs} placeholder='username' />
             <TextInput style={styles.inputs} placeholder='email' />
             <TextInput style={styles.inputs} secureTextEntry placeholder='pword'/>
-            <Button title='Signup' onPress={() => {this.register}} />
+            <Button title='Signup' onPress={() => this.props.navigation.navigate('Login')} />
         </View>
         );
     }

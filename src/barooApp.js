@@ -4,8 +4,8 @@ import { createStackNavigator, createAppContainer, createBottomTabNavigator } fr
 // import config from './config';
 
 const Tabs = createBottomTabNavigator({
-    Login: Login,
     Home: MainFeed,
+    Profile,Profile,
     Chat: Chat,
     NewItem: NewItem
 },{
@@ -14,18 +14,33 @@ const Tabs = createBottomTabNavigator({
   }
 })
 
-// const introStack = createStackNavigator({
-//   Login: Login,
-//   Register: Regis
-// })
+const BottomTabsContainer = createAppContainer(Tabs);
 
-const AppContainer = createAppContainer(Tabs);
+const LoginStack = createStackNavigator({
+  Login: Login,
+  Register: Regis,
+  // only if login successful
+  Feed: MainFeed
+})
+
+const LoginContainer = createAppContainer(LoginStack);
+
+const CamStack = createStackNavigator(
+  {
+    Roll: CamRoll,
+    Camera: Cam
+  },
+  {
+    initialRouteName: "Roll"
+  }
+);
+
+const CameraContainer = createAppContainer(CamStack);
 
 class BarooApp extends Component {
   render() {
     return (
-      // <AppContainer />
-      <CamRoll />
+      <BottomTabsContainer />
     )
   }
 }
