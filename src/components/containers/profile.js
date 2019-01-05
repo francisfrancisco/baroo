@@ -13,11 +13,6 @@ class Profile extends Component {
 
         return (
             <View style={styles.container}>
-                <View style={styles.header}> 
-                    <View>
-                        <Text>Baroo</Text>
-                    </View>
-                </View>
                 <View style={styles.userBar}>
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
                         <Image source={prof} style={styles.prof}/>
@@ -39,7 +34,8 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       width: 100 + '%',
-      height: 100 + '%'
+      height: 100 + '%',
+      marginTop: 60
     },
     header: {
       width: 100 + '%', 

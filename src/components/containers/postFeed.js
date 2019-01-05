@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {Post} from '../presentation';
-import {FlatList} from 'react-native';
+import {FlatList, View, Text} from 'react-native';
 
 class PostFeed extends Component{
+
 
     _renderPost(){
         return <Post />
@@ -13,13 +14,13 @@ class PostFeed extends Component{
     }
 
     render(){
-        return(
-            <FlatList
-            data={[1,2,3,4,5,6,7,8,9,10]}
-            keyExtractor={this._returnKey}
-            renderItem={this._renderPost}
-            />
-        )
+            return(
+                <FlatList
+                data={[1,2,3,4,5,6,7,8,9,10]}
+                keyExtractor={this._returnKey}
+                renderItem={this._renderPost}
+                />
+            )
     }
 }
 
