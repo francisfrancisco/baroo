@@ -1,17 +1,18 @@
 import React, {Component} from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Button } from "react-native";
 import config from '../../config'
 
 
 
 class Chat extends Component {
     static navigationOptions = {
-        title: 'CHAT',
+        title: 'Baroo',
     };  
     render() {
         return (
             <View style={styles.container}>
-            <Text>Chat</Text>
+            <Text>NewItemInputsHere</Text>
+            <Button title='submit' onPress={() => this.props.navigation.navigate('Auth')}/>
             </View>             
         );
     }

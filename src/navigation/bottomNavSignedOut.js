@@ -1,19 +1,45 @@
 import React from 'react';
 import { createStackNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
-import { PostFeed, Login } from '../components/containers';
+import { Login, PostFeed, Regis } from '../components/containers';
+import BottomNavIn from './bottomNavSignedIn';
 
 
-const Tabs = createBottomTabNavigator({
+  // -bottomTabOutStack
+  //   -logInStack with different header, title, etc
+  //   -postFeedStackOut
+  //     -PostFeedComp
+
+// const ChatLoginStack = createStackNavigator({
+//   ChatLogin: ChatLogin,
+//   IsLoggedIn: PostFeed,
+//   Register: Regis
+// })
+// const NewItemLoginStack = createStackNavigator({
+//   NewItemLogin: NewItemLogin,
+//   IsLoggedIn: PostFeed,
+//   Register: Regis
+// })
+// const ProfileLoginStack = createStackNavigator({
+//   ProfileLogin: ProfileLogin,
+//   IsLoggedIn: PostFeed,
+//   Register: Regis
+// })
+const LoginStack = createStackNavigator({
+  Login: Login,
+  Register: Regis
+})
+
+const TabsOut = createBottomTabNavigator({
     Home: PostFeed,
-    Chat: Login,
-    NewItem: Login,
-    Register: Login
+    Chat: LoginStack,
+    NewItem: LoginStack,
+    Profile: LoginStack
 },{
   tabBarOptions: {
     activeBackgroundColor: 'darkgreen'
   }
 })
 
-const BottomNavOut = createAppContainer(Tabs);
+const BottomNavOut = createAppContainer(TabsOut);
 
 export default BottomNavOut

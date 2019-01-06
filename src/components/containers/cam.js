@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, Button} from 'react-native';
 import { RNCamera } from 'react-native-camera';
 
 class Cam extends Component {
@@ -27,6 +27,7 @@ class Cam extends Component {
             <Text style={{fontSize: 14}}> SNAP </Text>
         </TouchableOpacity>
         </View>
+        <Button title='take' onPress={() => this.props.navigation.navigate('NewItemForm')} />
       </View>
     );
   }

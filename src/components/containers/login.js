@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 
 class Login extends Component {
+
     static navigationOptions = {
         title: 'Baroo',
     };
@@ -12,7 +13,7 @@ class Login extends Component {
             <TextInput style={styles.inputs} placeholder='email' />
             <TextInput style={styles.inputs} secureTextEntry placeholder='pword'/>
                 {/* if successful goes to mainFeed */}
-            <Button title='Login' onPress={() => this.props.navigation.navigate('Feed')} />
+            <Button title='Login' onPress={() => this.props.navigation.navigate('Auth')} />
             <Button title='Signup' onPress={() => this.props.navigation.navigate('Register')} />
         </View>
         );

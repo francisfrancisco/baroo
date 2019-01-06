@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Button } from "react-native";
 import config from '../../config'
 class Profile extends Component {
     static navigationOptions = {
@@ -20,6 +20,8 @@ class Profile extends Component {
                     </View>
                     <View>
                         <Text style={{fontSize: 30, alignItems: 'center'}}>golfgolfgolfgolfgolfgolf</Text>
+                        <Button title='LogOut' onPress={() => this.props.navigation.navigate('App')} />
+
                     </View>
                 </View>                
             <Text>PROFILE</Text>

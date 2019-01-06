@@ -42,12 +42,11 @@ class CamRoll extends Component {
           title='View Photos'
           onPress={() => { this.toggleModal(); this.getPhotos() }}
         />
-        {/* NOT FUNCTIONING CHANGE NAV */}
-                <Button
-          title="Take Photo"
+        <Button
+          title='Take Photo'
           onPress={() => this.props.navigation.navigate('Camera')}
         />
-
+        {/* NOT FUNCTIONING CHANGE NAV */}
         <Modal
           animationType={"slide"}
           transparent={false}

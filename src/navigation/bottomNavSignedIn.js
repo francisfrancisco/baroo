@@ -1,11 +1,16 @@
 import { createStackNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
-import { PostFeed, NewItem, Profile, Chat } from '../components/containers';
+import { PostFeed, NewItem, Profile, Chat, CamRoll, Cam, NewItemForm } from '../components/containers';
 
+const NewItemStack = createStackNavigator({
+  CamRoll: CamRoll,
+  Camera: Cam,
+  // NewItemForm: Tabs
+})
 
 const Tabs = createBottomTabNavigator({
     Home: PostFeed,
     Chat: Chat,
-    NewItem: NewItem,
+    NewItem: NewItemStack,
     //SavedItemFeed???
     Profile: Profile
 },{
